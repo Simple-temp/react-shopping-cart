@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Cart = ({ cartItem, clearCart, handleAddProducts, handleRemoveProducts }) => {
+
+const Cart = ({ cartItem, clearCart, handleAddProducts, handleRemoveProducts, deleteItem }) => {
 
     const totalPrice = cartItem.reduce((price, item) => price + item.quantity * item.price, 0)
 
@@ -46,7 +47,7 @@ const Cart = ({ cartItem, clearCart, handleAddProducts, handleRemoveProducts }) 
                                     <h6>{cartitem.quantity}*${cartitem.price}</h6>
                                 </div>
                                 <div className="col-lg-2 col-md-3 col-12 d-flex align-items-center justify-content-center">
-                                    <i class="fa-solid fa-trash-can"></i>
+                                    <i class="fa-solid fa-trash-can" onClick={() => deleteItem(cartitem.id)}></i>
                                 </div>
                             </div>
                         )

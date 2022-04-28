@@ -4,7 +4,7 @@ import { DataContext } from '../../App';
 
 const Products = ({handleAddProducts}) => {
 
-    const items = useContext(DataContext)
+    const {items} = useContext(DataContext)
 
     return (
         <div>
